@@ -23,22 +23,50 @@ class _BmiUIState extends State<BmiUI> {
       ),
       body: Column(
         children: [
-          Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-            Container(
-              width: 130,
-              child: TextField(
-                style: TextStyle(color: Colors.white70, fontSize: 30),
-                keyboardType: TextInputType.number,
-                decoration: InputDecoration(
-                  hintText: 'Height',
-                  border: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.white),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Container(
+                width: 130,
+                child: TextField(
+                  style: TextStyle(color: Colors.white70, fontSize: 30),
+                  keyboardType: TextInputType.number,
+                  decoration: InputDecoration(
+                    hintText: 'Height',
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.white),
+                    ),
+                    hintStyle: TextStyle(color: Colors.white),
                   ),
-                  hintStyle: TextStyle(color: Colors.white70),
                 ),
               ),
+              Container(
+                width: 130,
+                child: TextField(
+                  style: TextStyle(color: Colors.white70, fontSize: 30),
+                  keyboardType: TextInputType.number,
+                  decoration: InputDecoration(
+                    hintText: 'Weight',
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.white),
+                    ),
+                    hintStyle: TextStyle(color: Colors.white),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 30),
+          Container(
+            child: TextButton(
+              onPressed: () {},
+              child: Text(
+                'Calculate',
+                style: TextStyle(fontSize: 30, color: Colors.white60),
+              ),
             ),
-          ]),
+          ),
+          SizedBox(height: 30),
         ],
       ),
     );
