@@ -66,7 +66,20 @@ class _BmiUIState extends State<BmiUI> {
               ),
             ),
           ),
-          SizedBox(height: 30),
+          SizedBox(height: 50),
+          Container(
+            child: Text(
+              '10',
+              style: TextStyle(color: Colors.white70, fontSize: 90),
+            ),
+          ),
+          SizedBox(height: 50),
+          Container(
+            child: Text(
+              'Normal',
+              style: TextStyle(color: Colors.white, fontSize: 45),
+            ),
+          ),
         ],
       ),
     );
