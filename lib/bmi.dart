@@ -69,9 +69,18 @@ class _BmiUIState extends State<BmiUI> {
                 double _h = double.parse(_height.text);
                 double _w = double.parse(_weight.text);
 
-                setState(() {
-                  _result = _w / (_h * _h) * (10000);
-                });
+                setState(
+                  () {
+                    _result = _w / (_h * _h) * (10000);
+                    if (_result > 25) {
+                      _toShow = 'OverWeight';
+                    } else if (_result >= 18.5 && _result <= 25) {
+                      _toShow = 'Normal';
+                    } else {
+                      _toShow = 'UnderWeight';
+                    }
+                  },
+                );
               },
               child: Text(
                 'Calculate',
@@ -87,10 +96,13 @@ class _BmiUIState extends State<BmiUI> {
             ),
           ),
           SizedBox(height: 50),
-          Container(
-            child: Text(
-              'Normal',
-              style: TextStyle(color: Colors.white, fontSize: 45),
+          Visibility(
+            visible: _toShow.isNotEmpty,
+            child: Container(
+              child: Text(
+                _toShow,
+                style: TextStyle(color: Colors.white, fontSize: 45),
+              ),
             ),
           ),
         ],
